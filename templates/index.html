@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colour Detection Studio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">Colour Detection Studio</div>
+
+    <div class="status">
+        <span class="status-dot"></span>
+        <span id="systemStatus">System Ready</span>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <p class="tagline">COMPUTER VISION PROJECT</p>
+
+        <h1>Colour-Based Object Detection</h1>
+
+        <p>
+            Detect and identify objects based on their colour
+            using computer vision technology.
+        </p>
+    </section>
+
+    <section class="panel">
+        <h2>01. Select Input Mode</h2>
+
+        <div class="mode-options">
+
+            <button class="mode-card active" data-mode="image">
+                <span>▧</span>
+                <strong>Image</strong>
+                <small>Upload an image</small>
+            </button>
+
+            <button class="mode-card" data-mode="video">
+                <span>▷</span>
+                <strong>Video</strong>
+                <small>Upload a video</small>
+            </button>
+
+            <button class="mode-card" data-mode="webcam">
+                <span>◎</span>
+                <strong>Webcam</strong>
+                <small>Live camera detection</small>
+            </button>
+
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>02. Select Detection Colour</h2>
+
+        <p class="section-description">
+            Choose the colour you want the system to detect.
+        </p>
+
+        <div class="colour-options" id="colourOptions"></div>
+    </section>
+
+    <section class="panel">
+        <h2>03. Select Input</h2>
+
+        <div class="upload-area">
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+            >
+
+            <p class="upload-hint" id="uploadHint">
+                Supported formats: JPG, JPEG, PNG, WEBP
+            </p>
+
+            <video
+                id="webcamVideo"
+                class="camera-preview"
+                autoplay
+                muted
+                playsinline
+                hidden>
+            </video>
+
+        </div>
+    </section>
+
+    <section class="panel">
+
+        <h2>04. Detection Workspace</h2>
+
+        <div class="workspace">
+
+            <div class="preview">
+                <h3>Detection Output</h3>
+
+                <div class="preview-area" id="outputPreview">
+                    Your detection output will appear here
+                </div>
+            </div>
+
+            <div class="preview">
+                <h3>Colour Detection Mask</h3>
+
+                <div class="preview-area" id="maskPreview">
+                    Your colour mask will appear here
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LIVE VIDEO INFORMATION -->
+
+        <div id="videoLivePanel"
+             style="display:none; margin-top:25px;">
+
+            <h3>Live Video Detection</h3>
+
+            <div class="live-stat-grid">
+
+                <div class="live-stat">
+                    <span>Current Frame</span>
+                    <strong id="liveFrame">0 / 0</strong>
+                </div>
+
+                <div class="live-stat">
+                    <span>Objects in Current Frame</span>
+                    <strong id="liveCount">0</strong>
+                </div>
+
+                <div class="live-stat">
+                    <span>Total Detections</span>
+                    <strong id="liveTotal">0</strong>
+                </div>
+
+                <div class="live-stat">
+                    <span>Maximum Objects</span>
+                    <strong id="liveMaximum">0</strong>
+                </div>
+
+            </div>
+
+            <div class="progress-information">
+                <div class="progress-heading">
+                    <span>Processing Progress</span>
+                    <strong id="livePercentage">0%</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div id="liveProgressBar"
+                         class="progress-fill">
+                    </div>
+                </div>
+            </div>
+
+            <p id="videoProcessingStatus">
+                Waiting for video...
+            </p>
+
+            <div id="finalVideoArea"></div>
+
+        </div>
+
+        <div class="result-info" id="resultInfo">
+            Select an input mode and colour to begin detection.
+        </div>
+
+        <div class="actions">
+
+            <button class="start-btn" id="startBtn">
+                Start Detection
+            </button>
+
+            <button class="stop-btn" id="stopBtn" type="button" disabled>
+                Stop Detection
+            </button>
+
+        </div>
+
+        <div id="downloadArea" class="download-area"></div>
+
+    </section>
+
+    <footer class="footer">
+        <p>
+            Colour Detection Studio |
+            Powered by Python, OpenCV and NumPy
+        </p>
+    </footer>
+
+</main>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
