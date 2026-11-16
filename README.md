@@ -2,7 +2,15 @@
 
 A computer vision application that detects and identifies objects based on their colour using Python and OpenCV.
 
-The application supports image processing, video processing, and real-time webcam detection. Users can select a target colour, and the system identifies matching objects using HSV colour segmentation, contour detection, and image-processing techniques.
+The application supports image processing, video processing, and real-time webcam detection. Users can select a target colour, and the system identifies matching objects using HSV colour segmentation and image-processing techniques.
+
+## Live Demo
+
+**Try the application here:**
+
+🌐 https://color-based-object-detection.onrender.com
+
+The application is hosted on Render and can be accessed through a web browser.
 
 ## Features
 
@@ -18,20 +26,19 @@ The application supports image processing, video processing, and real-time webca
 - Noise reduction using morphological operations
 - Temporary object tracking when detection briefly disappears
 - Supports common image and video formats
-- Web-based interface for accessing detection features
+- Web-based interface
 
 ## Technologies Used
 
 - **Python** – Core programming language
 - **OpenCV** – Image and video processing
 - **NumPy** – Numerical and array operations
-- **Flask** – Web application and backend
-- **HTML, CSS, JavaScript** – Frontend interface
+- **Flask** – Backend web framework
+- **HTML, CSS, JavaScript** – Frontend development
 - **Tkinter** – Desktop file selection interface
+- **Render** – Cloud deployment
 
 ## Supported Detection Colours
-
-The application supports the following colours:
 
 - Red
 - Orange
@@ -49,21 +56,21 @@ The application supports the following colours:
 
 ### 1. Image Detection
 
-- Select an image from your computer.
-- Choose the target colour.
+- Upload an image from your device.
+- Select the target colour.
 - Detect matching objects.
 - View the processed image and detection mask.
 
 ### 2. Video Detection
 
-- Upload or select a video file.
+- Select or upload a video file.
 - Process the video frame by frame.
-- Detect and count objects matching the selected colour.
-- View the detection results.
+- Detect objects matching the selected colour.
+- View the detection results and object count.
 
 ### 3. Real-Time Webcam Detection
 
-- Access your computer's webcam.
+- Access your device's webcam.
 - Process live video frames.
 - Detect objects based on the selected colour.
 - Display bounding boxes, object counts, and detection masks in real time.
@@ -134,13 +141,13 @@ git clone https://github.com/gururaj004/color-based-object-detection.git
 cd color-based-object-detection
 ```
 
-### 3. Create a Virtual Environment (Recommended)
+### 3. Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate it on Windows:
+Activate on Windows:
 
 ```powershell
 venv\Scripts\Activate
@@ -158,7 +165,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open the following address in your browser:
+Open your browser and visit:
 
 ```text
 http://127.0.0.1:5000
@@ -166,24 +173,24 @@ http://127.0.0.1:5000
 
 ## Deployment
 
-The Flask application can be deployed using a cloud hosting platform such as Render.
+The Flask application is deployed using **Render**.
 
-**Live Application:** Add your deployed application URL here after deployment.
+**Live Application:** https://color-based-object-detection.onrender.com
 
 ## Future Improvements
 
 - Improve detection accuracy under different lighting conditions.
-- Add support for custom colour selection.
+- Add custom colour selection.
 - Improve object tracking across video frames.
 - Optimize processing performance for real-time applications.
-- Add additional computer vision features.
+- Introduce additional computer vision features.
 
 ## Author
 
 **Gururaj**
 
-GitHub: [@gururaj004](https://github.com/gururaj004)
+GitHub: https://github.com/gururaj004
 
 ---
 
-If you find this project useful, consider giving the repository a star!
+If you find this project useful, consider giving the repository a ⭐!
